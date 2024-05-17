@@ -56,5 +56,6 @@
   "collective": {
     "type": "opencollective",
     "url": "https://opencollective.com/proyecto26"
-  }
+  },
+  "packageManager": "yarn@1.22.19"
 }
