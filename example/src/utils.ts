@@ -38,7 +38,8 @@ export const openLink = async (
         //   width: width - width / 6,
         //   height: height - height / 6,
         // },
-        // // Android Properties
+        // Android Properties
+        incognito: true,
         // showTitle: true,
         // toolbarColor: '#6200EE',
         // secondaryToolbarColor: 'black',
