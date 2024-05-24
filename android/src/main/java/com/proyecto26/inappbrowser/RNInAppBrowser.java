@@ -61,6 +61,7 @@ public class RNInAppBrowser {
   private static final String KEY_BROWSER_PACKAGE = "browserPackage";
   private static final String KEY_SHOW_IN_RECENTS = "showInRecents";
   private static final String KEY_INCLUDE_REFERRER = "includeReferrer";
+  private static final String KEY_INCOGNITO = "incognito";
 
   private static final String ACTION_CUSTOM_TABS_CONNECTION = "android.support.customtabs.action.CustomTabsService";
   private static final String CHROME_PACKAGE_STABLE = "com.android.chrome";
@@ -151,6 +152,10 @@ public class RNInAppBrowser {
 
     CustomTabsIntent customTabsIntent = builder.build();
     Intent intent = customTabsIntent.intent;
+
+    if (options.hasKey(KEY_INCOGNITO)) {
+      intent.putExtra("com.google.android.apps.chrome.EXTRA_OPEN_NEW_INCOGNITO_TAB", true);
+    }
 
     if (options.hasKey(KEY_HEADERS)) {
       ReadableMap readableMap = options.getMap(KEY_HEADERS);
