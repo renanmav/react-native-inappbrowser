@@ -140,6 +140,7 @@ export async function openAuthSessionPolyfillAsync(
     !_redirectHandler,
     'InAppBrowser.openAuth is in a bad state. _redirectHandler is defined when it should not be.'
   );
+  console.log('openAuthSessionPolyfillAsync', options);
   try {
     return await Promise.race([
       openBrowserAsync(startUrl, options).then(function (result) {
