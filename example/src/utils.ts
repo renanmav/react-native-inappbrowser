@@ -28,8 +28,7 @@ export const openLink = async (
         incognito: true,
       };
       console.log('openLink -> options', options);
-      // TODO: fix openAuth on android with incognito
-      const result = await InAppBrowser.open(url, options);
+      const result = await InAppBrowser.openAuth(url, url, options);
       // A delay to show an alert when the browser is closed
       await sleep(800);
       Alert.alert('Response', JSON.stringify(result));
